@@ -13,10 +13,6 @@ const connect = function() {
     // code that does something when the connection is first established
     console.log("Successfully connected to game server");
     conn.write("Name: EL");
-    // setInterval(() => conn.write("Move: down"), 50);
-    // setTimeout(() => conn.write("Move: left"), 50);
-    // setTimeout(() => conn.write("Move: left"), 50);
-    // setTimeout(() => conn.write("Move: left"), 50);
   });
   // gets data from server
   conn.on('data', (data) => {
@@ -26,6 +22,7 @@ const connect = function() {
   //message when disconnected
   conn.on('end', () => {
     console.log('disconnected from server');
+    process.exit();
   });
 
   return conn;
