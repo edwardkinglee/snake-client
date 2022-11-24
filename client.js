@@ -13,6 +13,10 @@ const connect = function() {
     // code that does something when the connection is first established
     console.log("Successfully connected to game server");
     conn.write("Name: EL");
+    conn.write("Say: ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ");
+    setInterval(()=>{
+      conn.write("Say: ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️");
+    }, 5000);
   });
   // gets data from server
   conn.on('data', (data) => {
